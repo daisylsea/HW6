@@ -1,0 +1,6 @@
+﻿body {
+}
+.deletedRecipe {
+    color: red;
+}
+.validationError{color:red; font-style: italic;}
