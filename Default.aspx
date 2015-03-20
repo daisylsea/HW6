@@ -9,26 +9,26 @@
    
 </head>
 <body>
+    <center>
     <form id="form1" runat="server">
     <div>
-     Wicked Easy Recipes<br />
-        Using 5 Ingredients or Less!<br />
+     <h1>Wicked Easy Recipes</h1>
+        <h2>Using 5 Ingredients or Less!</h2>
         
         <br />
-        <asp:HyperLink ID="hl_Home" runat="server" NavigateUrl="./Default.aspx">Home</asp:HyperLink>
+       <h3> <asp:HyperLink ID="hl_Home" runat="server" NavigateUrl="./Default.aspx">Home</asp:HyperLink>
 &nbsp;|
         <asp:HyperLink ID="hl_new" runat="server" NavigateUrl="./NewRecipe.aspx">New Recipe</asp:HyperLink>
 &nbsp;|
         <asp:HyperLink ID="hl_about" runat="server" NavigateUrl="./AboutUs.aspx">About Us</asp:HyperLink>
 &nbsp;|
-        <asp:HyperLink ID="hl_contact" runat="server" NavigateUrl="./ContactUS.aspx">Contact</asp:HyperLink>
+        <asp:HyperLink ID="hl_contact" runat="server" NavigateUrl="./ContactUS.aspx">Contact</asp:HyperLink></h3>
         <br />
-        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_recipe %>" SelectCommand="SELECT * FROM [xliang1_recipe]" DeleteCommand="DELETE FROM [xliang1_recipe] WHERE [rID] = @rID" InsertCommand="INSERT INTO [xliang1_recipe] ([rID], [r_name], [sub_by], [ing_1], [ing_2], [ing_3], [ing_4], [ing_5], [prep], [notes]) VALUES (@rID, @r_name, @sub_by, @ing_1, @ing_2, @ing_3, @ing_4, @ing_5, @prep, @notes)" UpdateCommand="UPDATE [xliang1_recipe] SET [r_name] = @r_name, [sub_by] = @sub_by, [ing_1] = @ing_1, [ing_2] = @ing_2, [ing_3] = @ing_3, [ing_4] = @ing_4, [ing_5] = @ing_5, [prep] = @prep, [notes] = @notes WHERE [rID] = @rID">
+        <asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:db_recipe0 %>" SelectCommand="SELECT * FROM [xliang1_recipe0]" DeleteCommand="DELETE FROM [xliang1_recipe0] WHERE [rID] = @rID" InsertCommand="INSERT INTO [xliang1_recipe0] ([r_name], [sub_by], [ing_1], [ing_2], [ing_3], [ing_4], [ing_5], [prep], [notes]) VALUES (@r_name, @sub_by, @ing_1, @ing_2, @ing_3, @ing_4, @ing_5, @prep, @notes)" UpdateCommand="UPDATE [xliang1_recipe0] SET [r_name] = @r_name, [sub_by] = @sub_by, [ing_1] = @ing_1, [ing_2] = @ing_2, [ing_3] = @ing_3, [ing_4] = @ing_4, [ing_5] = @ing_5, [prep] = @prep, [notes] = @notes WHERE [rID] = @rID">
             <DeleteParameters>
                 <asp:Parameter Name="rID" Type="Int32" />
             </DeleteParameters>
             <InsertParameters>
-                <asp:Parameter Name="rID" Type="Int32" />
                 <asp:Parameter Name="r_name" Type="String" />
                 <asp:Parameter Name="sub_by" Type="String" />
                 <asp:Parameter Name="ing_1" Type="String" />
@@ -53,13 +53,17 @@
             </UpdateParameters>
         </asp:SqlDataSource>
         <br />
-        <asp:GridView ID="GridView1" runat="server" AllowPaging="True" AllowSorting="True" AutoGenerateColumns="False" DataSourceID="SqlDataSource1" Width="419px" DataKeyNames="rID">
+        <p>
+        <asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="rID" DataSourceID="SqlDataSource1" AllowPaging="True">
             <Columns>
                 <asp:BoundField DataField="r_name" HeaderText="Recipe Name" SortExpression="r_name" />
                 <asp:BoundField DataField="sub_by" HeaderText="Submitted By" SortExpression="sub_by" />
-                <asp:HyperLinkField DataNavigateUrlFields="rID" DataNavigateUrlFormatString="Recipe.aspx?rID={0}" Text="Select"/>
-           </Columns>
+                <asp:HyperLinkField DataNavigateUrlFields="rID" DataNavigateUrlFormatString="Recipe.aspx?rID={0}" Text="Select" />
+            </Columns>
+            <HeaderStyle BackColor=#FFFF99 ForeColor=#696969 />
+            <RowStyle BackColor=#F08080 ForeColor=#FFFFFF />
         </asp:GridView>
+            </p>
         <br />
         <br />
         <footer>
@@ -69,5 +73,6 @@
     
     </div>
     </form>
+        </center>
 </body>
 </html>

@@ -10,19 +10,20 @@
 </head>
 
 <body>
+    <center>
     <form id="form1" runat="server">
 
-     Wicked Easy Recipes<br />
-        Using 5 Ingredients or Less!<br />
+     <h1>Wicked Easy Recipes</h1><br />
+        <h2>Using 5 Ingredients or Less!</h2><br />
         
         <br />
-        <asp:HyperLink ID="hl_Home" runat="server" NavigateUrl="./Default.aspx">Home</asp:HyperLink>
+        <h3><asp:HyperLink ID="hl_Home" runat="server" NavigateUrl="./Default.aspx">Home</asp:HyperLink>
 &nbsp;|
         <asp:HyperLink ID="hl_new" runat="server" NavigateUrl="./NewRecipe.aspx">New Recipe</asp:HyperLink>
 &nbsp;|
         <asp:HyperLink ID="hl_about" runat="server" NavigateUrl="./AboutUs.aspx">About Us</asp:HyperLink>
 &nbsp;|
-        <asp:HyperLink ID="hl_contact" runat="server" NavigateUrl="./ContactUS.aspx">Contact</asp:HyperLink>
+        <asp:HyperLink ID="hl_contact" runat="server" NavigateUrl="./ContactUS.aspx">Contact</asp:HyperLink></h3>
         <br />
         <br />
         <br />
@@ -62,7 +63,11 @@
 
         <!-- End your 'If' statement. -->
         <%End If%>
-
+        <footer>
+            <p>
+                © 2015 Wicked Easy Recipes</p>
+        </footer>
     </form>
+</center>
 </body>
 </html>
